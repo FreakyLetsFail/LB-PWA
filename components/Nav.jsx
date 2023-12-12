@@ -39,9 +39,19 @@ const Nav = () => {
     <div className='sm:flex hidden'>
       {session?.user ? (
         <div className='flex gap-3 md:gap-5'>
-          <Link href="/"
+          <Link href="calendar"
           className='black_btn'>
-          Create Post
+          Kalendar
+          </Link>
+
+          <Link href="verbindungen"
+          className='black_btn'>
+          Verbindungen
+          </Link>
+
+          <Link href="maps"
+          className='black_btn'>
+          Karte
           </Link>
 
           <button type="button" onClick={signOut} className='outline_btn'>
@@ -100,12 +110,29 @@ const Nav = () => {
               My Profile
             </Link>
             <Link
-            href="/map"
+            href="/calendar"
             className='dropdown_link'
             onClick={() => setToggleDropdown (false)}
             >
-                Show Maps
+                Kalendar
             </Link>
+
+            <Link
+            href="/verbindungen"
+            className='dropdown_link'
+            onClick={() => setToggleDropdown (false)}
+            >
+                Verbindungen
+            </Link>
+
+            <Link
+            href="/maps"
+            className='dropdown_link'
+            onClick={() => setToggleDropdown (false)}
+            >
+                Karte
+            </Link>
+
             <button
             type='button'
             onClick={() => {
