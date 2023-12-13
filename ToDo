@@ -1,0 +1,11 @@
+Verbindungen Seite
+- Soll aus MongoDB dynamisch die Verbindungen auslesen und diese in Blöcken ausgeben.
+  Filter gehören dazu, Stadt, Verbindungsart, ...
+- Einfügen der Verbindungen (Plan war es die automatisch einzulesen und falls welche fehlen mit der user_permission = 10 über das Admin Profil anlegen zu können. 
+Kalender Seite 
+- Soll aus der Ausgewählten Stadt die Termine aller verbindungen anzeigen 
+  Filter gehören dazu, Stadt, Verbindungsart, ...
+Auth
+- Zu Google Auth, noch Credentials Auth über nextauth.js 
+PWA
+- Offline verfügbarkeit für Karten, über PushAlert benachrichtung 
