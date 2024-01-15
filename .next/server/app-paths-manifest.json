@@ -1,7 +1,4 @@
 {
-  "/not-found": "app/not-found.js",
   "/verbindungen/page": "app/verbindungen/page.js",
-  "/profile/page": "app/profile/page.js",
-  "/calendar/page": "app/calendar/page.js",
   "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js"
 }

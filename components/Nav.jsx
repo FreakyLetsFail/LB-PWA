@@ -2,6 +2,11 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { FaArrowRightFromBracket } from "react-icons/fa6";
+import { FaCalendarDays } from "react-icons/fa6";
+import { FaListUl } from "react-icons/fa6";
+import { FaMapLocationDot } from "react-icons/fa6";
+import { FaUserLargeSlash } from "react-icons/fa6";
 import { useState, useEffect } from 'react';
 import { signIn, signOut, useSession, getProviders} 
 from 'next-auth/react';
@@ -10,7 +15,6 @@ const Nav = () => {
   const { data: session } = useSession();
 
   const [providers, setProviders] = useState(null);
-  const [toggleDropdown, setToggleDropdown] = useState(false);
 
   useEffect(() => {
     const setUpProviders = async () => {
@@ -23,39 +27,28 @@ const Nav = () => {
   
 
   return (
-    <nav className='flex-between w-full mb-16 pt-3'>
-      <Link href='/' className='flex gap-2 flex-center'>
-        <Image
-          src='/assets/images/logo.svg'
-          alt='logo'
-          width={30}
-          height={30}
-          className='object-contain'
-        />
-        <p className='logo_text'>Lets Bummel</p>
-      </Link>
-
-    {/*Desktop Navigation*/}
-    <div className='sm:flex hidden'>
+<nav className="flex justify-center items-center w-10/10 p-3 rounded-xl bg-black text-white fixed bottom-[-2%] left-0 right-0 -translate-y-1/2 z-10 ">
+  {/*Desktop Version*/}
+  <div className='sm:flex hidden w-50% mx-auto '>
       {session?.user ? (
         <div className='flex gap-3 md:gap-5'>
-          <Link href="calendar"
-          className='black_btn'>
-          Kalendar
+          <Link href="calendar" className='base-btn'>
+          <FaCalendarDays className="icon-size" />
           </Link>
 
           <Link href="verbindungen"
-          className='black_btn'>
-          Verbindungen
+          className='base-btn'>
+          <FaListUl className="icon-size"/>
+        
           </Link>
 
           <Link href="maps"
-          className='black_btn'>
-          Karte
+          className='base-btn'>
+          <FaMapLocationDot className="icon-size"/>
           </Link>
 
-          <button type="button" onClick={signOut} className='outline_btn'>
-            Ausloggen
+          <button type="button" className='base-btn' onClick={signOut}>
+          <FaUserLargeSlash className="icon-size"/>
           </button>
 
           <Link href="/profile">
@@ -77,94 +70,64 @@ const Nav = () => {
             type="button"
             key={provider.name}
             onClick={() => signIn(provider.id)}
-            className='black_btn'
+            className='base-btn'
             >
-              Log In
+              <FaArrowRightFromBracket />
             </button>
           ))}
         </>
       )}
     </div>
-
-
-    {/*Mobile Navigation*/}
-    <div className='sm:hidden flex relative'>
+  {/*Mobile Version*/}
+  <div className='flex sm:hidden justify-center w-8/10 mx-auto'>
       {session?.user ? (
-        <div className='flex'>
-          <Image
-          src={session?.user.image}
-          alt="profile"
-          width={37}
-          height={37}
-          className='rounded-full'
-          onClick={() => setToggleDropdown((prev) => !prev)}
-          />
+        <div className='flex gap-3 md:gap-5'>
+          <Link href="calendar" className='base-btn'>
+          <FaCalendarDays className="icon-size" />
+          </Link>
 
-        {toggleDropdown && (
-          <div className='dropdown'>
-            <Link
-            href="/profile"
-            className='dropdown_link'
-            onClick={() => setToggleDropdown (false)}
-            >
-              My Profile
-            </Link>
-            <Link
-            href="/calendar"
-            className='dropdown_link'
-            onClick={() => setToggleDropdown (false)}
-            >
-                Kalendar
-            </Link>
+          <Link href="verbindungen" className='base-btn'>
+          <FaListUl className="icon-size"/>
+          </Link>
 
-            <Link
-            href="/verbindungen"
-            className='dropdown_link'
-            onClick={() => setToggleDropdown (false)}
-            >
-                Verbindungen
-            </Link>
+          <Link href="maps" className='base-btn'>
+          <FaMapLocationDot className="icon-size"/>
+          </Link>
 
-            <Link
-            href="/maps"
-            className='dropdown_link'
-            onClick={() => setToggleDropdown (false)}
-            >
-                Karte
-            </Link>
+          <button href="button" className='base-btn' onClick={signOut}>
+          <FaUserLargeSlash className="icon-size"/>
+          </button>
 
-            <button
-            type='button'
-            onClick={() => {
-              setToggleDropdown(false);
-              signOut();
-            }}
-            >
-              Ausloggen
-            </button>
-             
-          </div>
-        )}
+          <button href="/profile">
+            <Image
+            src={session?.user.image}
+            alt="profile"
+            width={37}
+            height={37}
+            className='rounded-full'/>
+          </button>
+
         </div>
       ): (
         <>
         {providers && 
-          Object.values(providers).map((provider) => (
+          Object.values(providers).map((provider)=> (
             <button
             type="button"
             key={provider.name}
             onClick={() => signIn(provider.id)}
-            className='black_btn'
+            className='base-btn'
             >
-              Log In
+              <FaArrowRightFromBracket />
             </button>
           ))}
         </>
       )}
     </div>
-
  </nav>
+
+ 
   )
 }
 
-export default Nav
+export default Nav;

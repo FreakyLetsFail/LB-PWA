@@ -1,4 +1,4 @@
-// File: /Users/justuswaechter/Documents/WEB/LetsBummel/app/api/auth/[...nextauth]/route.js
+// File: /Users/justuswaechter/Desktop/LetsBummel/app/api/auth/[...nextauth]/route.js
 import * as entry from '../../../../../../app/api/auth/[...nextauth]/route.js'
 import type { NextRequest } from 'next/server.js'
 

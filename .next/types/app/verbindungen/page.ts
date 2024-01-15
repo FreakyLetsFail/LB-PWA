@@ -1,4 +1,4 @@
-// File: /Users/justuswaechter/Documents/WEB/LetsBummel/app/verbindungen/page.jsx
+// File: /Users/justuswaechter/Desktop/LetsBummel/app/verbindungen/page.jsx
 import * as entry from '../../../../app/verbindungen/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

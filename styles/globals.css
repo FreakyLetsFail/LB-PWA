@@ -8,6 +8,11 @@
   Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
 */
 
+
+.icon-size {
+  font-size: 24px; /* oder die gewünschte Größe */
+}
+
 .main {
   width: 100vw;
   min-height: 100vh;
@@ -146,6 +151,16 @@
 
 .dropdown_link {
   @apply text-sm font-inter text-gray-700 hover:text-gray-500 font-medium;
+}
+
+.base-btn {
+  display: inline-block;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none; /* Entfernt Unterstreichungen von Links */
+  border: none; /* Entfernt Rahmen von Buttons */
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 /* PromptCard Component */
