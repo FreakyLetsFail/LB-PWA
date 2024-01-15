@@ -1,7 +1,6 @@
 {
-  "/verbindungen/page": "app/verbindungen/page.js",
-  "/api/verbindungen/read/route": "app/api/verbindungen/read/route.js",
   "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
   "/calendar/page": "app/calendar/page.js",
+  "/api/calendar/read/route": "app/api/calendar/read/route.js",
   "/manifest.webmanifest/route": "app/manifest.webmanifest/route.js"
 }

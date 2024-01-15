@@ -7,6 +7,7 @@ import { FaCalendarDays } from "react-icons/fa6";
 import { FaListUl } from "react-icons/fa6";
 import { FaMapLocationDot } from "react-icons/fa6";
 import { FaUserLargeSlash } from "react-icons/fa6";
+import { FaHouse } from "react-icons/fa6";
 import { useState, useEffect } from 'react';
 import { signIn, signOut, useSession, getProviders} 
 from 'next-auth/react';
@@ -32,7 +33,11 @@ const Nav = () => {
   <div className='sm:flex hidden w-50% mx-auto '>
       {session?.user ? (
         <div className='flex gap-3 md:gap-5'>
-          <Link href="calendar" className='base-btn'>
+          <Link href="home" className='base-btn'>
+          <FaHouse className="icon-size"/>
+          </Link>
+
+          <Link href="calender" className='base-btn'>
           <FaCalendarDays className="icon-size" />
           </Link>
 
@@ -82,7 +87,12 @@ const Nav = () => {
   <div className='flex sm:hidden justify-center w-8/10 mx-auto'>
       {session?.user ? (
         <div className='flex gap-3 md:gap-5'>
-          <Link href="calendar" className='base-btn'>
+
+          <Link href="home" className='base-btn'>
+          <FaHouse className="icon-size"/>
+          </Link>
+
+          <Link href="calender" className='base-btn'>
           <FaCalendarDays className="icon-size" />
           </Link>
 

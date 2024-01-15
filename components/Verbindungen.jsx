@@ -6,4 +6,4 @@ const Verbindungen = () => {
   )
 }
 
-export default Verbindungenr
+export default Verbindungen
